@@ -125,6 +125,22 @@ $bm: -3px;
   margin-top: $bm;
 }
 
+.box--ml {
+  @extend .box;
+  top: 50%;
+  left: 0;
+  margin-left: $bm;
+  margin-top: $bm;
+}
+
+.box--mr {
+  @extend .box;
+  top: 50%;
+  right: 0;
+  margin-right: $bm;
+  margin-top: $bm;
+}
+
 .box--bl {
   @extend .box;
   bottom: 0;
@@ -155,4 +171,14 @@ $bm: -3px;
 
 .selected {
   color: #383737 !important;
+}
+
+.img1 {
+  position: absolute;
+  right: -20px;
+  top: 20%;
+  line-height: 0;
+  img {
+    min-width: 120px;
+  }
 }
