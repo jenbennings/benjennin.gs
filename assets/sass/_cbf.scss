@@ -51,11 +51,9 @@ body {
 }
 
 .draggable {
-    //z-index: 200;
-    //border: 2px solid transparent;
-    display: inline-block;
-    cursor: default;
-    position: absolute;
+  display: inline-block;
+  cursor: default;
+  position: absolute;
 }
 
 .guide {
@@ -77,8 +75,10 @@ body {
     height: 100%;
 }
 
+$sketch-blue: #4cc1fc;
+$sketch-gray: #d2d2d2;
+
 .item {
-  //border: 1px solid #d2d2d2 !important;
   z-index: 300;
   white-space: nowrap;
   user-select: none;
@@ -87,6 +87,7 @@ body {
     color: #4cc1fc;
   }
 }
+
 .boxes {
   display: block;
   border: 1px solid #d2d2d2 !important;
@@ -171,6 +172,11 @@ $bm: -3px;
 
 .selected {
   color: #383737 !important;
+  outline: none !important;
+
+  &:hover {
+    outline: none !important;
+  }
 }
 
 .img1 {
@@ -178,7 +184,14 @@ $bm: -3px;
   right: -20px;
   top: 20%;
   line-height: 0;
+
+  &:hover {
+    outline: 2px solid $sketch-blue;
+  }
+
   img {
     min-width: 120px;
+    min-height: 120px;
+    //background-color: pink;
   }
 }
