@@ -1,0 +1,158 @@
+// The old cbf file...
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+html {
+  background-color: #f2f2f2;
+}
+
+body {
+  position: relative;
+}
+
+.workspace {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.artboard {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  box-shadow: 0px 0px 5px #b6b6b6;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: -22px;
+    left: 0;
+    content: 'Mobile Portrait';
+    font-size: 12px;
+    color: #929292;
+
+    @include breakpoint(portrait) {
+      content: 'Tablet Portrait';
+    }
+
+    @include breakpoint(desktop) {
+      content: 'Desktop HD';
+    }
+
+  }
+}
+
+.draggable {
+    //z-index: 200;
+    //border: 2px solid transparent;
+    display: inline-block;
+    cursor: default;
+    position: absolute;
+}
+
+.guide {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#guide-h {
+    z-index: 300;
+    border-top: 1px solid red;
+    width: 100%;
+}
+
+#guide-v {
+    z-index: 300;
+    border-left: 1px solid red;
+    height: 100%;
+}
+
+.item {
+  //border: 1px solid #d2d2d2 !important;
+  z-index: 300;
+  white-space: nowrap;
+  user-select: none;
+
+  &:hover {
+    color: #4cc1fc;
+  }
+}
+.boxes {
+  display: block;
+  border: 1px solid #d2d2d2 !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.box {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  box-shadow: 0px 0px 2px #898989;
+  background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(218,218,218,1) 100%);
+}
+
+$bm: -3px;
+
+.box--tl {
+  @extend .box;
+  margin-left: $bm;
+  margin-top: $bm;
+}
+
+.box--tm {
+  @extend .box;
+  left: 50%;
+  margin-left: $bm;
+  margin-top: $bm;
+}
+
+.box--tr {
+  @extend .box;
+  right: 0;
+  margin-right: $bm;
+  margin-top: $bm;
+}
+
+.box--bl {
+  @extend .box;
+  bottom: 0;
+  left: 0;
+  margin-left: $bm;
+  margin-bottom: $bm;
+}
+
+.box--bm {
+  @extend .box;
+  bottom: 0;
+  left: 50%;
+  margin-left: $bm;
+  margin-bottom: $bm;
+}
+
+.box--br {
+  @extend .box;
+  bottom: 0;
+  right: 0;
+  margin-right: $bm;
+  margin-bottom: $bm;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.selected {
+  color: #383737 !important;
+}
