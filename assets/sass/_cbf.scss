@@ -44,9 +44,12 @@ body {
     }
 
     @include breakpoint(desktop) {
-      content: 'Desktop HD';
+      content: 'Desktop';
     }
 
+    @include breakpoint(desktop-hd) {
+      content: 'Desktop HD';
+    }
   }
 }
 
