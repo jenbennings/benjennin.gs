@@ -5,7 +5,7 @@ var open = require('open');
 // Create a node-static server instance to serve the './public' folder
 //
 var file = new(static.Server)('./public/dev', { cache: false });
-var port = 8080;
+var port = 8082;
 
 require('http').createServer(function (request, response) {
     request.addListener('end', function () {
