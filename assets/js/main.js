@@ -1,6 +1,6 @@
-var MIN_DISTANCE = 10; // minimum distance to "snap" to a guide
-var guides = []; // no guides available ...
-var innerOffsetX, innerOffsetY; // we'll use those during drag ...
+var MIN_DISTANCE = 10;
+var guides = [];
+var innerOffsetX, innerOffsetY;
 
 $( ".draggable" ).draggable({
     start: function( event, ui ) {
@@ -9,7 +9,6 @@ $( ".draggable" ).draggable({
         innerOffsetY = event.originalEvent.offsetY;
     },
     drag: function( event, ui ){
-        // iterate all guides, remember the closest h and v guides
         var guideV, guideH, distV = MIN_DISTANCE+1, distH = MIN_DISTANCE+1, offsetV, offsetH;
         var chosenGuides = { top: { dist: MIN_DISTANCE+1 }, left: { dist: MIN_DISTANCE+1 } };
         var $t = $(this);
@@ -68,7 +67,6 @@ function computeGuidesForElement( elem, pos, w, h ){
         { type: "h", left: pos.left, top: pos.top + h },
         { type: "v", left: pos.left, top: pos.top },
         { type: "v", left: pos.left + w, top: pos.top },
-        // you can add _any_ other guides here as well (e.g. a guide 10 pixels to the left of an element)
         { type: "h", left: pos.left, top: pos.top + h/2 },
         { type: "v", left: pos.left + w/2, top: pos.top }
     ];

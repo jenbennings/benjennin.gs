@@ -25,17 +25,23 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   background-color: white;
-  box-shadow: 0px 0px 5px #b6b6b6;
+  box-shadow: 0px 1px 6px #a8a8a8;
   position: relative;
+
+  @include breakpoint(portrait) {
+    width: 70%;
+    height: 70%;
+  }
 
   &:before {
     position: absolute;
     top: -22px;
     left: 0;
     content: 'Mobile Portrait';
+    font-family: sans-serif;
     font-size: 12px;
     color: #929292;
 
@@ -86,12 +92,25 @@ $sketch-gray: #d2d2d2;
   white-space: nowrap;
   user-select: none;
 
+  .underline {
+    border-bottom: 2px solid $foreground;
+  }
+
+  a {
+    color: $foreground;
+  }
+
   &:hover {
     color: #4cc1fc;
+
+    a {
+      color: #4cc1fc;
+    }
   }
 }
 
 .boxes {
+  pointer-events: none;
   display: block;
   border: 1px solid #d2d2d2 !important;
   position: absolute;
@@ -179,22 +198,215 @@ $bm: -3px;
 
   &:hover {
     outline: none !important;
+
+    a {
+      color: $foreground;
+    }
   }
 }
 
-.img1 {
+.text {
+  display: none;
+  font-size: 24px;
   position: absolute;
-  right: -20px;
-  top: 20%;
+}
+
+.recent {
+  @extend .text;
+  left: 30%;
+  bottom: 5%;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.measured {
+  @extend .text;
+  top: 3%;
+  left: -5%;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.coinbase {
+  @extend .text;
+  top: 50%;
+  right: -15%;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+
+.image {
+  display: none;
+  position: absolute;
   line-height: 0;
 
   &:hover {
     outline: 2px solid $sketch-blue;
   }
+}
 
-  img {
-    min-width: 120px;
-    min-height: 120px;
-    //background-color: pink;
+.github {
+  @extend .image;
+  left: 50%;
+  top: -2%;
+  max-width: 40px;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.twitter {
+  @extend .image;
+  right: 25%;
+  top: 5%;
+  max-width: 40px;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.dribbble {
+  @extend .image;
+  left: 5%;
+  top: 35%;
+  max-width: 40px;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.email {
+  @extend .image;
+  right: 4%;
+  top: 70%;
+  max-width: 40px;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.new {
+  @extend .image;
+  left: -2%;
+  top: 60%;
+  max-width: 80px;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.dollars {
+  @extend .image;
+  right: 10%;
+  top: -5%;
+  max-width: 100px;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.iphone {
+  @extend .image;
+  left: 10%;
+  bottom: -5%;
+  max-width: 60px;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.cover {
+  @extend .image;
+  right: 20%;
+  bottom: -20%;
+  box-shadow: 0px 1px 6px #a8a8a8;
+  max-width: 180px;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+.ben {
+  @extend .image;
+  max-width: 120px;
+  margin-right: 0;
+  right: -3%;
+  top: 20%;
+
+  @include breakpoint(portrait) {
+    display: block;
+  }
+}
+
+[data-icon] {
+  display: inline-block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  &[data-icon="email"] { background-image: url('../img/email.png'); }
+  &[data-icon="dribbble"] { background-image: url('../img/dribbble.png'); }
+  &[data-icon="twitter"] { background-image: url('../img/twitter.png'); }
+  &[data-icon="github"] { background-image: url('../img/github.png'); }
+}
+
+.mobfriendly {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .underline {
+    border-bottom: 2px solid $foreground;
+  }
+
+  a {
+    color: $foreground;
+  }
+
+  .pic {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+
+  .bio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer {
+    margin-bottom: 20px;
+
+    a {
+      padding: 5px;
+    }
+  }
+
+  [data-icon] {
+    width: 30px;
+    height: 30px;
+  }
+
+  @include breakpoint(portrait) {
+    display: none;
   }
 }

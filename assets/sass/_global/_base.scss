@@ -2,7 +2,7 @@
 
 
 // Base style globally applied to elements on this project
-// ------------------------------------------------------------------------------------ 
+// ------------------------------------------------------------------------------------
 
 
 
@@ -49,12 +49,12 @@ em,i,cite,q,address,dfn,var {
 abbr[title],dfn[title] {
   cursor:help;
   border-bottom-width: 1px;
-  border-bottom-style: dotted; 
+  border-bottom-style: dotted;
 }
 
 ins {
   border-bottom-width: 1px;
-  border-bottom-style: solid; 
+  border-bottom-style: solid;
 }
 
 a,u,ins {
@@ -79,8 +79,8 @@ html {
   font-size: $base_font_size;
   line-height: $base_line_height;
 
-  font-family: $sans;
-  font-weight: $roman; 
+  font-family: 'Union';
+  font-weight: $roman;
   font-style: normal;
 
   -webkit-text-size-adjust: 100%;
@@ -114,14 +114,6 @@ ul {
 
 ol {
   padding-left: 20px;
-}
-
-a {
-  color: lighten($foreground, 10%);
-
-  &:hover {
-    color: darken($foreground, 10%);
-  }
 }
 
 
