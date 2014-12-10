@@ -204,27 +204,6 @@ module.exports = function(grunt) {
 
   // --------------------------------------------------------------------------------- \\
 
-    grunticon: {
-      icons: {
-        files: [{
-            expand: true,
-            cwd: 'assets/icons/svg/',
-            src: ['*.svg', '*.png'],
-            dest: 'assets/icons'
-        }],
-        options: {
-          cssprefix: '.i-',
-          // define vars that can be used in filenames if desirable, e.g. foo.colors-primary-secondary.svg
-          // colors: {
-          //   primary: "red",
-          //   secondary: "#666"
-          // }
-        }
-      }
-    },
-
-  // --------------------------------------------------------------------------------- \\
-
     clean: {
       all: ['public/dev/', 'public/production/'],
       html: ['public/dev/**/*.html', 'public/production/**/*.html']
